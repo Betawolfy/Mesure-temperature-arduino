@@ -13,10 +13,6 @@
 //configuration du Grove - LCD RGB Backlight : dans cette exemple: l'écran sera rouge.
 rgb_lcd lcd;
 
-const int colorR = random(0, 255);
-const int colorG = random(0, 255);
-const int colorB = random(0, 255);
-
 const int B = 4275;               //  Valeur B de la thermistance
 const int R0 = 100000;            // R0 = 100k
 const int pinTempSensor = A0;     // le capteur de thempérature est connecté sur A0
@@ -46,11 +42,13 @@ void setup() {
 
 void loop() {
   
+ // les trois lignes qui font en sorte de choisir un nombre entre 0 et 255 (pour choisir la couleur). 
 int colorR = random(0, 255);
 int colorG = random(0, 255);
 int colorB = random(0, 255);
 
      lcd.setRGB(colorR, colorG, colorB);
+ 
 //Partie du Temperature Sensor V1.1/1.2  
 
   int a = analogRead(pinTempSensor);
