@@ -31,13 +31,14 @@ const int pinTempSensor = A0;     // le capteur de thempérature est connecté s
 void setup() {
 // Partie du Temperature Sensor V1.1/1.2
     
-    Serial.begin(9600);
+    Serial.begin(9600); //environ 9500 bytes par secondes.
 
 // Partie du Grove - LCD RGB Backlight
 
   // définir le nombre de colonnes et de lignes de l'écran LCD (nombre de colonnes, nombres de ligne)
     lcd.begin(16, 2);
 
+ // 
     lcd.setRGB(colorR, colorG, colorB);
 
     // définir un message sur l'écran LCD. Ici, la température désiré.
@@ -68,7 +69,8 @@ void loop() {
     lcd.print(char(223));
     lcd.print("C");
     
-    delay(100); // le programme ce répète tout les 100 ms   
+    delay(100); // le programme ce répète tout les 100 ms
+    lcd.clear(); 
 }
 /* code utilisé: 
  *  Wikiseeed : https://wiki.seeedstudio.com/Grove-LCD_RGB_Backlight/
